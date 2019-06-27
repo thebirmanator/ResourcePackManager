@@ -1,0 +1,6 @@
+main: me.thebirmanator.resourcepackmanager.ResourcePackManager
+name: ResourcePackManager
+version: 1.0
+author: TheBirmanator
+api-version: 1.14
+description: Manages players downloading the resource pack
