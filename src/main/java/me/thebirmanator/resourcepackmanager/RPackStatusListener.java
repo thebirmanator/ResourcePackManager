@@ -20,12 +20,12 @@ public class RPackStatusListener implements Listener {
         switch (event.getStatus()) {
             case ACCEPTED:
                 player.sendMessage(main.getPrefix() + "Sending you to safety to load the resource pack.");
-                List<ItemStack> hotbar = Arrays.asList(player.getInventory().getStorageContents()).subList(0, 8);
+                List<ItemStack> hotbar = Arrays.asList(player.getInventory().getStorageContents()).subList(0, 9);
                 // does not have previously saved data: if they do, they are already in the box, and it will be overwritten
                 if(PlayerData.getData(player) == null) {
                     new PlayerData(player.getUniqueId(), player.getLocation(), hotbar);
                 }
-                for(int i = 0; i < 9; i++) {
+                for(int i = 0; i < hotbar.size(); i++) {
                     player.getInventory().setItem(i, new ItemStack(Material.AIR));
                 }
                 player.teleport(main.getSafetyBox());
