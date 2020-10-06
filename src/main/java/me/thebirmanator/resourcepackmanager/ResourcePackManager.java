@@ -18,9 +18,9 @@ public class ResourcePackManager extends JavaPlugin {
         saveDefaultConfig();
 
         // if there's data, load it
-        if(getConfig().getConfigurationSection("data") != null) {
+        if (getConfig().getConfigurationSection("data") != null) {
             Set<String> stringUUIDS = getConfig().getConfigurationSection("data").getKeys(false);
-            for(String s : stringUUIDS) {
+            for (String s : stringUUIDS) {
                 PlayerData.loadFromConfig(s);
             }
         }
@@ -31,7 +31,7 @@ public class ResourcePackManager extends JavaPlugin {
     }
 
     public void onDisable() {
-        for(PlayerData data : PlayerData.getAllData()) {
+        for (PlayerData data : PlayerData.getAllData()) {
             data.saveToConfig();
         }
     }

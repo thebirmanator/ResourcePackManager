@@ -59,8 +59,8 @@ public class PlayerData {
     }
 
     public static PlayerData getData(Player player) {
-        for(PlayerData data : allData) {
-            if(player.getUniqueId().equals(data.uuid)) {
+        for (PlayerData data : allData) {
+            if (player.getUniqueId().equals(data.uuid)) {
                 return data;
             }
         }
